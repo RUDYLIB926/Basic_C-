@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Grades
 {
-    class GradeBook
+    public class GradeBook
     {
         public GradeBook()
         {
+            _name = "Empty";
             grades = new List<float>();
         }
 
@@ -23,7 +25,7 @@ namespace Grades
             GradeStatistics stats = new GradeStatistics();
 
             float sum = 0;
-            foreach(float grade in grades)
+            foreach (float grade in grades)
             {
                 stats.HighestGrade = Math.Max(stats.HighestGrade, grade);
                 stats.LowestGrade = Math.Min(stats.LowestGrade, grade);
@@ -34,6 +36,38 @@ namespace Grades
             return stats;
         }
 
+        internal void WriteGrades(TextWriter destination)
+        {
+            for (int i = 0; i < grades.Count; i++)
+            {
+                destination.WriteLine(grades[i]);
+            }
+        }
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (_name != value && NameChanged != null)
+                {
+                    NameChangedEventArgs args = new NameChangedEventArgs();
+                    args.Existing = _name;
+                    args.NewName = value;
+                    NameChanged(this, args);
+                }
+                else
+                    _name = value;
+            }
+
+        }
+
+        private string _name;
+
         private List<float> grades;
+
+        public event NameChangedDelegate NameChanged;
     }
 }
