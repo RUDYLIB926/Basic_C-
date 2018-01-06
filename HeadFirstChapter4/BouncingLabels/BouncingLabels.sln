@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BouncingLabels", "BouncingLabels\BouncingLabels.csproj", "{1C77A06B-751E-4E4F-BE32-E4650809BFDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C77A06B-751E-4E4F-BE32-E4650809BFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C77A06B-751E-4E4F-BE32-E4650809BFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C77A06B-751E-4E4F-BE32-E4650809BFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C77A06B-751E-4E4F-BE32-E4650809BFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FEB4212-2EFD-42E3-9FD7-27D12B327454}
+	EndGlobalSection
+EndGlobal
