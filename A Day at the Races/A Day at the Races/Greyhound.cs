@@ -17,12 +17,15 @@ namespace A_Day_at_the_Races
 
         public bool Run()
         {
-            StartingPosition = Location;
-            Randomizer = new Random(4);
-            Location = Randomizer.Next();
-            MyPictureBox.Left = StartingPosition + Location;
-
-            return true;
+            Location += Randomizer.Next(1,10);
+            if (MyPictureBox.Left >= RacetrackLength) { return true; }
+            else
+            {
+                MyPictureBox.Left = StartingPosition + Location;
+                return false;
+            }
+                
+                
         }
 
         public void TakeStartingPosition()
